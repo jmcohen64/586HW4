@@ -1,0 +1,244 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[top=1in,textheight=9in]{geometry}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{enumerate}
+\usepackage{xfrac}
+\usepackage{xcolor}
+
+
+% Everything after a % sign is commented out.
+% This is sometimes useful to write notes to yourself
+% or to add spacing in the tex file so that it is easier
+% to read.
+
+
+% Some useful `macros'
+% % % Feel free to define your own!
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\eps}
+
+
+% Here is a pretty way to write down the problem
+
+\newtheorem{defn}{Definition}
+
+\newtheorem{innerprob}{Problem}
+\newenvironment{prob}[1]
+  {\renewcommand\theinnerprob{#1}\innerprob}
+  {\endinnerprob}
+% Here is a pretty way to wrote down the solution
+\newenvironment{solution}
+  {\renewcommand\qedsymbol{}\begin{proof}[Solution]}
+  {\end{proof}\bigskip}
+
+
+\setlength\parindent{0cm}
+\setlength\parskip{5pt plus 1pt minus 1pt}
+
+
+
+\title{Assignment \#4\\Math 584A}
+\author{
+	% PUT YOUR NAME HERE
+	}
+\date{Due October 1st at 1 am (via Gradescope)}
+
+
+
+
+
+
+
+
+
+\begin{document}
+
+\maketitle
+
+For uploading to Gradescope, it will be easiest to put each solution on a different page.  The code for this is commented out in the tex file.
+
+% Don't write anything between \begin{document}
+% and \maketitle or it will show up before your name
+% and the rest of the title stuff.
+
+
+
+%State the problem
+%\begin{prob}{PROBLEM #}
+%  WRITE PROBLEM
+%\end{prob}
+
+% Note prob is custom-made above will
+
+
+
+
+\begin{prob}{1}  % `prob' starts the (custom made, above) problem
+			%  and the 
+Fix a metric space $(X,d)$.  Suppose that $x_1,x_2,\dots$ is a Cauchy sequence.  Show that it is convergent if and only if there exists a subsequence $x_{n_1}, x_{n_2},\dots$ that is convergent.
+\end{prob}
+%Uncomment the lines below to solve the problem
+%\begin{solution}
+%This is a very elegant solution.
+%\end{solution}
+%\newpage
+
+
+
+\begin{prob}{2}  % `prob' starts the (custom made, above) problem
+			%  and the 
+Suppose that $x_1, x_2,\dots$ is a sequence of points in $(X,d)$ and $\xi \in X$.  Show that
+\[
+	\lim_{n\to\infty} x_n = \xi
+\]
+if and only if every subsequence $x_{n_1},x_{n_2},\dots$ has a further subsequence $x_{n_{k_1}}, x_{n_{k_2}}, \dots$ such that
+\[
+	\lim_{\ell\to\infty} x_{n_{k_\ell}} = \xi.
+\]
+\end{prob}
+%Uncomment the lines below to solve the problem
+%\begin{solution}
+%This is a very elegant solution.
+%\end{solution}
+%\newpage
+
+
+
+
+
+\begin{prob}{3}  % `prob' starts the (custom made, above) problem
+			%  and the
+Do Exercise 3.2.11; that is, complete the proof of part (ii) of the Cauchy Completion Theorem.
+ \end{prob}
+%Uncomment the lines below to solve the problem
+%\begin{solution}
+%This is a very elegant solution.
+%\end{solution}
+%\newpage
+
+
+
+
+
+
+\begin{prob}{4}  % `prob' starts the (custom made, above) problem
+			%  and the 
+Do Exerciser 3.2.12; that is, show that the preimage $f^{-1}(K)$ of a closed set is closed if $f:X \to Y$ is continuous.
+\end{prob}
+%Uncomment the lines below to solve the problem
+\begin{solution}
+	Let $(x_n)_n$ be a convergent sequence in $f^{-1}(K)$ where $$\lim_{n\to\infty} x_n = x_\infty.$$ By sequential continuity, this implies $$\lim_{n\to\infty} f(x_n) = f(x_\infty).$$ Since $K$ is closed, $f(x_\infty) \in K$. By definition of the premimage, this implies $x_\infty \in f^{-1}(K)$. By the arbitrary choice of $(x_n)_n$, $f^{-1}(K)$ is closed.
+	
+	The contrapositive of this statement is 
+\end{solution}
+\newpage
+
+
+
+
+
+
+
+
+
+
+\begin{prob}{5} % `prob' starts the (custom made, above) problem
+			%  and the 
+Define the space
+\[
+	\ell^\infty = \{ \bar x \in \R^\N : \|\bar x\|_{\ell^\infty} < \infty\}
+\]
+where
+\[
+	\|\bar x\|_{\ell^\infty}
+		= \sup_{i\in \N} |x_i|.
+\]
+Show that $d_{\ell^\infty}(\bar x, \bar z) = \|\bar x - \bar z\|_{\ell^\infty}$ is a metric.
+\end{prob}
+%Uncomment the lines below to solve the problem
+\begin{solution}
+	Since $d_{\ell^\infty}(\bar x, \bar z) = \sup\{|x_1 - z_1|, |x_2-z_2|, \dots \}$, by the absolute value, for all $i \in \N$, $|x_i - z_i| \geq 0$ and $|x_i - z_i| = 0$ only when $x_i = z_i$. Hence, $d_{\ell^\infty}$ satisfies positive definiteness.
+	
+	Notice that for all $i \in \N$, $|x_i - z_i| = |z_i - x_i|$. By the symmetry of the absolute value, $d_{\ell^\infty}(\bar x, \bar z) = d_{\ell^\infty}(\bar z, \bar x)$. Thus, $d_{\ell^\infty}$ satisfies symmetry.
+	
+	Again by the triangle inequality of the absolute value, for any $n\in \N$,
+	\[\begin{split}
+		|x_n - z_n| &\leq |x_n| + |z_n|\\
+		\leq \sup_{i\in \N}|x_i| + \sup_{i\in \N}|x_i|.
+	\end{split}\]
+	Hence, $$\sup_{i\in \N}|x_i - z_i| \leq \sup_{i\in \N}\left (\sup_{i\in \N}|x_i| + \sup_{i\in \N}|x_i|\right ).$$ Since the suprememum is a single number, $$\sup_{i\in \N}|x_i - z_i| \leq \sup_{i\in \N}|x_i| + \sup_{i\in \N}|x_i|.$$ Therefore, $d_{\ell^\infty}$ satisfies the triangle inequality and thus satisfies all properties of a metric. 
+\end{solution}
+\newpage
+
+
+
+
+\begin{prob}{6} % `prob' starts the (custom made, above) problem
+			%  and the 
+Let
+\[
+	c = \left\{\bar x \in \ell^\infty : \lim_{i\to\infty} x_i \text{ exists}\right\}.
+\]
+Show that $c$ is a closed subset of $\ell^\infty$.
+\end{prob}
+%Uncomment the lines below to solve the problem
+\begin{solution}
+	Fix any sequence $\bar y \in \ell^\infty \setminus c$ and $\bar x \in c$. Let $\bar x$ converge to $x_\infty$. Since $\bar y$ does not converge to $x_\infty$ there must exist $\epsilon > 0$ and $M$ such that for some $m\geq M$, $$|x_n - x_\infty| > \frac\epsilon2.$$ For the same $\epsilon$, there must exist $N$ such that $$|x_n - x_\infty| < \frac\epsilon4$$ whenever $n\geq N$. Notice that there must exist some $\epsilon$ such that $M\geq N$ as if this were not the case $|y_m - x_\infty| < \sfrac\epsilon4$ for any $\epsilon > 0$ and $N$, thus contradicting $\bar y$ as a nonconvergent sequence. Let $B_r(\bar y)$ be the open ball of radius $r = \frac\epsilon4$. For $m,n \geq N$, 
+	\[\begin{split}
+		\frac\epsilon2 &< |y_m - x_\infty|\\
+		& = |y_m -x_n + x_n - x_\infty|\\
+		&\leq |y_m -x_n| + |x_n - x_\infty|\\
+		&\leq |y_m -x_n| + \frac\epsilon4\\
+		&\leq \sup_{i\in \N}|y_i -x_i| + \frac\epsilon4\\
+		& = d_{\ell^\infty}(\bar y, \bar x) + \frac\epsilon4.
+	\end{split}\]
+	Rearranging yields $$\frac\epsilon4 < d_{\ell^\infty}(\bar y, \bar x).$$ Thus, $\bar y \notin B_r(\bar y)$. By the arbitrary selection of $\bar y$, and $\ell^\infty \setminus c$ is open. Therefore, $c$ is closed.
+\end{solution}
+\newpage
+
+
+
+
+\begin{prob}{7} % `prob' starts the (custom made, above) problem
+			%  and the 
+Show that $\sim$ defined on $\R$ by
+\[
+	a \sim b
+	\quad\text{ if and only if }
+	\quad\text{ there exists 	} q \in \Q \text{ such that } a + q = b
+\]
+is an equivalence relation.
+\end{prob}
+%Uncomment the lines below to solve the problem
+\begin{solution}
+	To show reflexivity, notice that $a + 0 = a$. Since $0\in \Q$, $a \sim a$. 
+	
+	Let $q\in \Q$ satisfy $a + q = b$ and thus $a \sim b$. Observe $a = b - q$. Because $-q \in \Q$, $b \sim a$, thus satisfying symmetry. 
+	
+	Let $p,q \in \Q$ satisfy $a + p = b$ and $b + q = c$. Thus, $a \sim b$ and $b \sim c$. Combining these two gives 
+	\[\begin{split}
+		c &= (a+p) + q  \\
+		&= a + (p+q)
+	\end{split}\]
+	Since $\Q$ is closed under addition, $(p+q)\in \Q$, and $a\sim c$. Therefore, $\sim$ satisfies transitivity and is an equivalence relation. 
+\end{solution}
+%\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
